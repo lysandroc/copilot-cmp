@@ -61,7 +61,7 @@ methods.getCompletionsCycling = function (self, params, callback)
 
   api.get_completions_cycling(self.client, util.get_doc_params(), respond_callback)
   -- Callback to cmp with empty completions so it doesn't freeze
-  callback(format_completions({}, params.context, self.formatters))
+  callback(format_completions({ IsIncomplete = true, items = {} }, params.context, self.formatters))
 end
 
 --[[
